@@ -1,0 +1,21 @@
+<h1>Search SWAPI for Star Wars characters</h1>
+
+<!-- 
+	fullstack forms need a method property and and
+	action property
+	method=type of http request
+	action=url to perform the request on
+	inputs need name properties
+	name=the key in the query string of a 
+	GET request form
+-->
+<!-- 
+	http://localhost:3000/search?userInput=hello
+	https://duckduckgo.com/?q=hello&ia=web 
+-->
+<form method="GET" action="/search" >
+	<label for="search">Search:</label>
+	<input id="search" type="text" placeholder="enter your query..." name="userInput" />
+
+	<input type="submit" />
+</form>

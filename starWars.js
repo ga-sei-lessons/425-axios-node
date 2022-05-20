@@ -2,7 +2,7 @@
 
 const axios = require('axios')
 
-const url = 'https://swapi.dev/api/people'
+const url = 'https://swapi.dev/api/people/?search=Leia'
 
 //fetch(reddit)
 // .then(turn it in to json)

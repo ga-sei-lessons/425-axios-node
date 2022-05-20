@@ -1,0 +1,10 @@
+<h1>Search Results for <%= input %>:</h1>
+<% people.forEach(person => { %>
+	<div>
+		<h2><%= person.name %></h2>
+	
+		<p>birth year: <%= person.birth_year %></p>
+	
+		<p>hair color: <%= person.hair_color %></p>
+	</div>
+<% }) %>
