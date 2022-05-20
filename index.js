@@ -1,0 +1,1 @@
+console.log('i am the main entry point, you can run me by typing "node ."')
