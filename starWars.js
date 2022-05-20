@@ -66,3 +66,5 @@ async function fetchStarwars() {
 }
 
 fetchStarwars() // don't forget to invoke!!
+
+// bonus challenge -- refactor fetch calls to be async await 
