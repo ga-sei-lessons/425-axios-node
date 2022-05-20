@@ -6,5 +6,9 @@
 		<p>birth year: <%= person.birth_year %></p>
 	
 		<p>hair color: <%= person.hair_color %></p>
+		<!-- send the request back to our server -- we can use axios to get the data and render a template 
+		http://localhost:3000/search/homeworld?url=https://swapi.dev/api/planets/2/
+		-->
+		<a href="/search/homeworld?url=<%= person.homeworld %>">Home world</a>
 	</div>
 <% }) %>
