@@ -15,19 +15,20 @@ app.get('/', (req, res) => {
 })
 
 // GET /search -- take a search from the user and render the results for them to see
-// app.get('/search', (req, res) => {
-// 	console.log(req.query.userInput) // express puts the query strings here
-// 	const searchUrl = `https://swapi.dev/api/people/?search=${req.query.userInput}`
-	// axios.get(searchUrl)
-	// 	.then(response => {
-	// 		// render the temple once the API gets back to us
-	// 		res.render('results.ejs', {
-	// 			people: response.data.results,
-	// 			input: req.query.userInput
-	// 		})	
-	// 	})
-	// 	.catch(console.log) // HANDLE YOUR ERRORS
-// })
+// using dot then syntax
+app.get('/search', (req, res) => {
+	console.log(req.query.userInput) // express puts the query strings here
+	const searchUrl = `https://swapi.dev/api/people/?search=${req.query.userInput}`
+	axios.get(searchUrl)
+		.then(response => {
+			// render the temple once the API gets back to us
+			res.render('results.ejs', {
+				people: response.data.results,
+				input: req.query.userInput
+			})	
+		})
+		.catch(console.log) // HANDLE YOUR ERRORS
+})
 
 // async/await
 app.get('/search', async (req, res) => {

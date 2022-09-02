@@ -9,26 +9,26 @@ const url = 'https://swapi.dev/api/people/?search=Leia'
 // .then(you get your data)
 
 // axios.httpMehtod/Verb('url to make request to')
-// axios.get(url)
-// 	// axios returns a promise that is dot thennable
-// 	.then(response => {
-// 		// always need to get the data key 
-// 		// axios puts the API's response in the data key
-// 		// console.log(response.data.results) // what is in here?
-// 		const princess = response.data.results.filter(result => result.name === 'Leia Organa')
-// 		console.log(princess[0].homeworld)
-// 		// another http request by returing an axios promise
-// 		return axios.get(princess[0].homeworld)
-// 	})
-// 	.then(response => {
-// 		console.log(response.data.films[0]) // princess Leia's homeworld data
-// 		// get info about the first film this planet was in
-// 		return axios.get(response.data.films[0])
-// 	})
-// 	.then(response => {
-// 		console.log(response.data.opening_crawl) // film data
-// 	})
-// 	.catch(err => console.warn(err))
+axios.get(url)
+// axios returns a promise that is dot thennable
+	.then(response => {
+		// always need to get the data key 
+		// axios puts the API's response in the data key
+		// console.log(response.data.results) // what is in here?
+		const princess = response.data.results.filter(result => result.name === 'Leia Organa')
+		console.log(princess[0].homeworld)
+		// another http request by returing an axios promise
+		return axios.get(princess[0].homeworld)
+	})
+	.then(response => {
+		console.log(response.data.films[0]) // princess Leia's homeworld data
+		// get info about the first film this planet was in
+		return axios.get(response.data.films[0])
+	})
+	.then(response => {
+		console.log(response.data.opening_crawl) // film data
+	})
+	.catch(err => console.warn(err))
 
 // BAD NO 
 // axios.get(url) 	
@@ -38,7 +38,6 @@ const url = 'https://swapi.dev/api/people/?search=Leia'
 // 			.then(response => {
 // 				axios.get(response.data.films[0])
 // 					.then(response => {
-
 // 					})
 // 			})
 // 	})
